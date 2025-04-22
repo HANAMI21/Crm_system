@@ -1,0 +1,2 @@
+Tasks:
+- DONE: Create virtual environment, create project
