@@ -29,7 +29,7 @@
                     <td>{{ culture.field_number }}</td>
                     <td>
                         <!-- Кнопка редагування (світло-синій) -->
-                        <a href="#" class="btn btn-info btn-sm">Редагувати</a>
+                        <a href="{% url 'culture_edit' culture.id %}" class="btn btn-info btn-sm">Редагувати</a>
 
                         <!-- Кнопка видалення -->
                         <a class="btn btn-danger btn-sm" href="{% url 'delete_culture' culture.id %}">Видалити</a>
