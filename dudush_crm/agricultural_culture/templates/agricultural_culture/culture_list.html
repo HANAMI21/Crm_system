@@ -1,0 +1,46 @@
+{% extends "agricultural_culture/base.html" %}
+
+{% block content %}
+    <h1>Сільськогосподарські культури</h1>
+
+    <!-- Кнопка додавання нового запису (зелена) -->
+    <a href="#" class="btn btn-success mb-3 float-right">
+        <i class="fa fa-plus"></i> Додати запис
+    </a>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Назва</th>
+                <th>Час дозрівання (дні)</th>
+                <th>Посівна площа (га)</th>
+                <th>Дата посева</th>
+                <th>Номер поля</th>
+                <th>Дія</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for culture in cultures %}
+                <tr>
+                    <td>{{ culture.title }}</td>
+                    <td>{{ culture.ripening_time }}</td>
+                    <td>{{ culture.planted_area }}</td>
+                    <td>{{ culture.planting_date }}</td>
+                    <td>{{ culture.field_number }}</td>
+                    <td>
+                        <!-- Кнопка редагування (світло-синій) -->
+                        <a href="#" class="btn btn-info btn-sm">Редагувати</a>
+
+                        <!-- Кнопка видалення -->
+                        <a class="btn btn-danger btn-sm" href="{% url 'delete_culture' culture.id %}">Видалити</a>
+
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6" style="text-align: center;">Не знайдено даних.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "agricultural_culture/base.html" %}
+
+{% block title %}Підтвердження видалення{% endblock %}
+
+{% block content %}
+<div class="row my-4">
+    <div class="col-md-6 offset-md-3">
+        <div class="border p-3 bg-white">
+            <h3>Видалення культури</h3>
+            <hr>
+            <form method="POST">
+                <div class="alert alert-danger">
+                    <h4>Ви впевнені, що хочете видалити культуру "{{ culture.title }}"?</h4>
+                </div>
+                {% csrf_token %}
+                <a class="btn btn-secondary btn-sm" href="{% url 'agricultural_culture_list' %}">Скасувати</a>
+                <input class="btn btn-danger btn-sm" type="submit" value="Видалити">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
