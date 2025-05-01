@@ -8,5 +8,6 @@ urlpatterns = [
     path('cultures/delete/<int:culture_id>/',
          views.delete_culture, name='delete_culture'),
     path('cultures/edit/<int:culture_id>/', views.culture_edit, name='culture_edit'),
-
+    path('cultures/add/', views.culture_add, name='culture_add'),
+    path('cultures/export/', views.export_cultures, name='export_cultures'),
 ]

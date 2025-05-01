@@ -1,12 +1,14 @@
-{% extends "agricultural_culture/base.html" %}
+
+{% extends 'core/base.html' %}
 
 {% block content %}
     <h1>Сільськогосподарські культури</h1>
 
     <!-- Кнопка додавання нового запису (зелена) -->
-    <a href="#" class="btn btn-success mb-3 float-right">
+    <a href="{% url 'culture_add' %}" class="btn btn-success mb-3 float-right">
         <i class="fa fa-plus"></i> Додати запис
     </a>
+    <a href="{% url 'export_cultures' %}" class="btn btn-primary">Экспортировать в CSV</a>
 
     <table class="table table-bordered">
         <thead>

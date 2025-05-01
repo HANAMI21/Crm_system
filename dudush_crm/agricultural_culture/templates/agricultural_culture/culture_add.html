@@ -1,17 +1,17 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Редагування культури{% endblock %}
+{% block title %}Додавання нової культури{% endblock %}
 {% load crispy_forms_tags %}
 
 {% block content %}
 <div class="row my-4">
     <div class="col-md-6 offset-md-3 p-3 bg-white">
-        <h3>Редагування культури</h3>
+        <h3>Додавання нової культури</h3>
         <hr>
         <form method="POST">
             {% csrf_token %}
             {{ form|crispy }}
-            <input class="btn btn-info" type="submit" value="Підтвердити">
+            <input class="btn btn-info" type="submit" value="Додати">
             <a class="btn btn-secondary" href="{% url 'agricultural_culture_list' %}">Скасувати</a>
         </form>
     </div>
