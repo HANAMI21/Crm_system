@@ -23,6 +23,7 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
+
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -56,6 +57,18 @@
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'agricultural_culture_list' %}" class="nav-link">
+              <i class="nav-icon fas fa-seedling"></i>
+              <p>С/Г Культури</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'supplier_list' %}" class="nav-link">
+              <i class="nav-icon fas fa-truck"></i>
+              <p>Постачальники</p>
+            </a>
           </li>
 
 

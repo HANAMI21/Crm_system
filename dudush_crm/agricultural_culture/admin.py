@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import AgriculturalCulture
 
+
 @admin.register(AgriculturalCulture)
 class AgriculturalCultureAdmin(admin.ModelAdmin):
     list_display = ['title', 'ripening_time', 'planted_area', 'planting_date', 'field_number']
