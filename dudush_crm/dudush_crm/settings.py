@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'agricultural_culture.apps.AgriculturalCultureConfig',
     'supplier.apps.SupplierConfig',
+    'fertilizer.apps.FertilizerConfig',
     'users.apps.UsersConfig',
 ]
 

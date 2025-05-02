@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('agricultural_culture.urls')),
     path('', include('users.urls')),
     path('', include('supplier.urls')),
+    path('', include('fertilizer.urls')),
 ]

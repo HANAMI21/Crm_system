@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1>Добрива</h1>
+
+    <a href="{% url 'fertilizer_add' %}" class="btn btn-success mb-3 float-right">
+        <i class="fa fa-plus"></i> Додати добриво
+    </a>
+    <a href="{% url 'export_fertilizers' %}" class="btn btn-primary">Експорт в CSV</a>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Назва</th>
+                <th>Ціна за тону</th>
+                <th>Дія</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fertilizer in fertilizers %}
+                <tr>
+                    <td>{{ fertilizer.title }}</td>
+                    <td>{{ fertilizer.price_per_ton }}</td>
+                    <td>
+                        <!-- Кнопка редагування (світло-синій) -->
+                        <a href="{% url 'fertilizer_edit' fertilizer.id %}" class="btn btn-info btn-sm">Редагувати</a>
+
+                        <!-- Кнопка видалення -->
+                        <a class="btn btn-danger btn-sm" href="{% url 'delete_fertilizer' fertilizer.id %}">Видалити</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3" style="text-align: center;">Не знайдено даних.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
